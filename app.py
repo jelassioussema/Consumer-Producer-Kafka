@@ -19,7 +19,7 @@ EVENT_TEMPLATES = [
         "kogitodmnmodelname": "TransactionMonitoringDMN",
         "kogitodmnmodelnamespace": "https://kiegroup.org/dmn/_EED47FB5-8A7C-44F3-A786-563FD2DAF015",
         "data": {
-            "airmiles": { "Status": "Gold",
+            "Airmiles": { "Status": "Gold",
                              "Price":600}
         }
     }
