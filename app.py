@@ -5,24 +5,8 @@ import os
 import random
 import time
 import uuid
-import json
-import sys
-
 
 from kafka import KafkaProducer
-from kafka import KafkaConsumer
-
-consumer = KafkaConsumer ('dbzzz.inventory.airmiles',bootstrap_servers = ['my-cluster-kafka-bootstrap:9092'],
-value_deserializer=lambda m: json.loads(m.decode('utf-8')))
-
-# Read data from kafka
-for message in consumer:
-    Status=message.value["payload"]["after"]["Status"]
-    Price=message.value["payload"]["after"]["Price"]
-    print(Status)
-
-
-
 
 EVENT_TEMPLATES = [
 
@@ -35,10 +19,8 @@ EVENT_TEMPLATES = [
         "kogitodmnmodelname": "TransactionMonitoringDMN",
         "kogitodmnmodelnamespace": "https://kiegroup.org/dmn/_EED47FB5-8A7C-44F3-A786-563FD2DAF015",
         "data": {
-            "airmiles":    { "Status": Status,
-                             "Price": Price,
-
-        }
+            "airmiles": { "Status": "Gold",
+                             "Price":600}
         }
     }
 ]
