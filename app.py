@@ -12,7 +12,7 @@ import sys
 from kafka import KafkaProducer
 from kafka import KafkaConsumer
 
-consumer = KafkaConsumer ('dbzzz.inventory.airmiles',bootstrap_servers = ['my-cluster-kafka-brokers:9092'],
+consumer = KafkaConsumer ('dbzzz.inventory.airmiles',bootstrap_servers = ['my-cluster-kafka-bootstrap:9092'],
 value_deserializer=lambda m: json.loads(m.decode('utf-8')))
 
 # Read data from kafka
